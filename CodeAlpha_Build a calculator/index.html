@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthmetic Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    
+    <div class="calculator-container">
+        
+        <div class="calc-screen">
+             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+                <svg id="sun-icon" class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                    <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M20 12h2"/><path d="M2 12h2"/><path d="m18.36 5.64-1.48 1.48"/><path d="m6.05 17.95 1.48-1.48"/><path d="m6.05 6.05 1.48 1.48"/><path d="m17.95 17.95 1.48 1.48"/>
+                </svg>
+                <svg id="moon-icon" class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                </svg>
+            </button>
+            
+            <div class="display-content">
+                <div id="equation-text" class="equation-text" style="display: none;"></div>
+                <div id="current-display" class="current-display">0</div>
+            </div>
+        </div>
+
+        <div class="button-grid">
+            <button class="calc-button default clear-button" data-action="clear">C</button>
+            <button class="calc-button default clear-button" data-action="sign">+/-</button>
+            <button class="calc-button default clear-button" data-action="percent">%</button>
+            <button class="calc-button operator" data-action="operator" data-value="÷">÷</button>
+
+            <button class="calc-button default" data-value="7">7</button>
+            <button class="calc-button default" data-value="8">8</button>
+            <button class="calc-button default" data-value="9">9</button>
+            <button class="calc-button operator" data-action="operator" data-value="×">×</button>
+
+            <button class="calc-button default" data-value="4">4</button>
+            <button class="calc-button default" data-value="5">5</button>
+            <button class="calc-button default" data-value="6">6</button>
+            <button class="calc-button operator" data-action="operator" data-value="-">-</button>
+
+            <button class="calc-button default" data-value="1">1</button>
+            <button class="calc-button default" data-value="2">2</button>
+            <button class="calc-button default" data-value="3">3</button>
+            <button class="calc-button operator" data-action="operator" data-value="+">+</button>
+
+            <button class="calc-button default wide" data-value="0">0</button>
+            <button class="calc-button default" data-action="decimal">.</button>
+            <button class="calc-button operator" data-action="equals">=</button>
+        </div>
+    </div>
+
+    <script src="index.js" defer></script>
+</body>
+</html>
