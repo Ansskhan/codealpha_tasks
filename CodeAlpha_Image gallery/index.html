@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groove Cuts Saloon - Our Premium Services</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-image: url(./images/body.jpg);">
+
+    <header class="navbar">
+        <a class="navbar-brand" href="#">
+            <span class="logo-icon">GROO<img src="./images/beard.png" alt="Beard Logo">E CUTS SALOON</span>
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="title">
+            <h1>Our Services!</h1>
+            <h2>Here we provide the best service for our loyal customers</h2>
+        </div>
+        <div id="service-gallery">
+            <!-- json sy data ayega -->
+        </div>
+    </div>
+
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <div class="modal-content-wrapper">
+            <img id="modalImage" src="" alt="Full size image">
+
+            <button id="prevBtn" class="nav-btn"> <img src="./images/cut.png" alt="Previous"> </button>
+            <button id="nextBtn" class="nav-btn"> <img class="opposite" src="./images/cut.png" alt="Next"> </button>
+        </div>
+    </div>
+
+    <script src="fetch.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

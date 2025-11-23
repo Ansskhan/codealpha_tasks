@@ -1,0 +1,60 @@
+{
+    "galleryCards": [
+        {
+            "indexNo": 0,
+            "img": "./images/signature.jpg",
+            "alt": "The Signature Cut",
+            "heading": "The Signature Cut",
+            "text": "Expert haircutting, wash, and tailored styling advice."
+        },
+        {
+            "indexNo": 1,
+            "img": "./images/img3.jpg",
+            "alt": "Royal Beard Trim",
+            "heading": "Royal Beard Trim",
+            "text": "Hot towel treatment, precision trimming, and balm application."
+        },
+        {
+            "indexNo": 2,
+            "img": "./images/lathershave.jpg",
+            "alt": "Hot Lather Shave",
+            "heading": "Hot Lather Shave",
+            "text": "Traditional straight razor shave with steam and soothing aftershave."
+        },
+        {
+            "indexNo": 3,
+            "img": "./images/fatherSon.jpg",
+            "alt": "Father & Son Package",
+            "heading": "Father & Son Package",
+            "text": "A combined experience for two, including cuts and styling."
+        },
+        {
+            "indexNo": 4,
+            "img": "./images/Executive.jpg",
+            "alt": "Executive Styling",
+            "heading": "Executive Styling",
+            "text": "Advanced styling techniques using premium salon products."
+        },
+        {
+            "indexNo": 5,
+            "img": "./images/interior.jpg",
+            "alt": "Saloon Ambiance",
+            "heading": "The Groove Vibe",
+            "text": "View of our sophisticated, high-end saloon interior."
+        },
+        {
+            "indexNo": 6,
+            "img": "./images/DIY.jpg",
+            "alt": "Coloring & Dye",
+            "heading": "Coloring & Dye",
+            "text": "Professional hair coloring and blending services."
+        },
+        {
+            "indexNo": 7,
+            "img": "./images/Skincare.jpg",
+            "alt": "Product Display",
+            "heading": "Premium Products",
+            "text": "Our curated selection of top-tier grooming products."
+        }
+    ]
+}

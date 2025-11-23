@@ -1,0 +1,270 @@
+/* --- 1. Variables and Global Styles --- */
+:root {
+	--dark-bg: #121212;
+	--goldenrod-accent: #b8860b;
+	--light-text: #f0f0f0;
+	--container-width: 1500px;
+}
+
+body {
+	/* Background Image (Using placeholder since local path is used) */
+	background-color: #000;
+	background-image: url('https://placehold.co/1920x1080/202020/404040?text=Stylish+Barber+Cut');
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	color: var(--light-text);
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: var(--container-width);
+	margin: 0 auto;
+	padding: 20px;
+	/* Semi-transparent overlay */
+	background-color: rgba(27, 26, 26, 0.61);
+	min-height: 100vh;
+}
+
+/* --- 2. Header and Typography --- */
+.navbar {
+	background-color: #0a0a0a;
+	border-bottom: 3px solid var(--goldenrod-accent);
+	padding: 15px 0;
+}
+
+.navbar-brand {
+	position: relative;
+	color: var(--goldenrod-accent);
+	font-family: 'Oswald', sans-serif;
+	font-size: 2.2rem;
+	font-weight: 700;
+	text-decoration: none;
+	letter-spacing: 4px;
+	display: flex;
+	align-items: center;
+	margin-left: 20px;
+}
+
+/* Logo Styling - Adjusted to work without absolute positioning */
+.navbar-brand .logo-icon img {
+	height: 39px;
+	margin-bottom: 8px;
+	position:sticky;
+	width: auto;
+	vertical-align: middle;
+}
+
+.title {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.title h1 {
+	color: var(--goldenrod-accent);
+	font-family: 'Oswald', sans-serif;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	font-size: 3rem;
+	text-transform: uppercase;
+}
+
+.title h2 {
+	color: var(--light-text);
+	font-size: 1.2rem;
+	font-weight: 300;
+	margin: 0;
+}
+
+
+/* --- 3. Our Services Grid (Improved Responsiveness) --- */
+#service-gallery {
+	display: grid;
+	/* Default: 2 columns */
+	grid-template-columns: repeat(2, 1fr);
+	gap: 40px;
+	padding: 0 50px;
+}
+
+.service-card {
+	position: relative;
+	overflow: hidden;
+	border: 1px solid rgba(184, 134, 11, 0.5);
+	transition: all 0.3s ease;
+	height: 450px; /* Set a fixed height for consistency */
+}
+
+.service-card:hover {
+	box-shadow: 0 0 20px var(--goldenrod-accent);
+}
+
+.service-thumbnail {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-thumbnail {
+	transform: scale(1.05); /* Zoom */
+}
+
+.card-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.75);
+	padding: 15px 20px;
+	line-height: 1.5;
+	z-index: 10;
+}
+
+.card-overlay h3 {
+	color: var(--goldenrod-accent);
+	margin: 0;
+	font-size: 1.5rem;
+	font-family: 'Oswald', sans-serif;
+}
+
+.card-overlay p {
+	color: var(--light-text);
+	margin: 5px 0 0 0;
+	font-size: 1rem;
+	font-weight: 300;
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 992px) {
+	#service-gallery {
+		/* Tablet: 2 columns, smaller gap */
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+		padding: 0 10px;
+	}
+	.service-card {
+		height: 350px;
+	}
+}
+
+@media (max-width: 600px) {
+	#service-gallery {
+		/* Mobile: 1 column */
+		grid-template-columns: 1fr;
+		gap: 25px;
+	}
+	.service-card {
+		height: 300px;
+	}
+	.navbar-brand {
+		font-size: 1.5rem;
+	}
+}
+
+
+/* --- 4. Lightbox Modal with Fade Animation --- */
+.lightbox-modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.98);
+	overflow: auto;
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+}
+
+.lightbox-modal.is-visible {
+	opacity: 1;
+}
+
+.modal-content-wrapper {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 auto;
+	padding: 0 50px;
+	width: 90%;
+	max-width: 1000px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+#modalImage {
+	width: 100%;
+	height: auto;
+	max-height: 90vh;
+	display: block;
+	margin: auto;
+	border: 5px solid var(--goldenrod-accent);
+	/* This controls the image fade on slide change */
+	opacity: 0;
+	transition: opacity 0.4s ease-in-out;
+}
+
+#modalImage.show-img {
+	opacity: 1;
+}
+
+/* Close Button */
+.close-btn {
+	color: var(--goldenrod-accent);
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	font-size: 50px;
+	font-weight: 300;
+	transition: 0.3s;
+	cursor: pointer;
+	z-index: 1002; /* Ensure close button is above nav buttons */
+}
+
+.close-btn:hover {
+	color: white;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	padding: 18px 15px;
+	color: var(--goldenrod-accent);
+	font-weight: bold;
+	font-size: 30px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border: 2px solid var(--goldenrod-accent);
+	transform: translateY(-50%);
+	z-index: 1001;
+}
+
+.nav-btn img {
+	height: 30px;
+	width: 30px;
+	vertical-align: middle;
+}
+
+.nav-btn:hover {
+	background-color: var(--goldenrod-accent);
+	color: #000;
+}
+
+#prevBtn {
+	left: 0;
+	border-radius: 0 5px 5px 0;
+}
+
+#nextBtn {
+	right: 0;
+	border-radius: 5px 0 0 5px;
+}
+.opposite{
+	transform: rotate(180deg);
+}
+
